@@ -1,0 +1,15 @@
+{
+    "typescript.tsdk": "/Users/mac/Desktop/myFolder/ALTEACAREWEB/node_modules/typescript/lib",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "prettier.arrowParens": "avoid",
+    "editor.formatOnSave": true,
+    "importSorter.generalConfiguration.sortOnBeforeSave": true,
+    "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne",
+    "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 100,
+    "importSorter.importStringConfiguration.tabSize": 4,
+    "importSorter.importStringConfiguration.quoteMark": "single",
+    "prettier.printWidth": 100
+}

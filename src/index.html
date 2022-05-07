@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+  <link rel="stylesheet" type="text/css" charset="UTF-8"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+
+  <link rel=icon href=/assets/favicons/favicon.ico>
+
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicons/android-chrome-512x512.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android-icon-192x192.png" />
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" />
+
+  <link rel="icon" type="image/png" sizes="150x150" href="/assets/favicons/mstile-150x150.png" />
+  <link rel="icon" type="image/svg" href="/assets/favicons/safari-pinned-tab.svg" />
+
+  <style>
+    @font-face {
+      font-family: 'Inter Regular';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Inter Regular'), local('Inter-Regular'), url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    body {
+      font-family: 'Inter Regular', sans-serif;
+      font-weight: 400 !important;
+      color: #555
+    }
+  </style>
+
+  <title>AlteaCare</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <noscript> You need to enable JavaScript to run this app. </noscript>
+  <div id="ie" style="display: none; padding: 24px; color: #9F6000; background-color: #FEEFB3;">
+    Your web browser is old some features of this web may not work.
+    <a href="http://outdatedbrowser.com/en">Please upgrade your browser.</a>
+  </div>
+  <div id="app" style="display:block">
+
+    <!-- tobereplace -->
+  </div>
+  <div id="mobile-header" style="position: relative;"></div>
+  <div id="links"></div>
+  <div id="icon-container"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+  <script>
+    var animation = bodymovin.loadAnimation({
+      // animationData: { /* ... */ },
+      container: document.getElementById('icon-container'), // required
+      path: './assets/altea-loader/loading_lottie.json', // required
+      renderer: 'svg', // required
+      loop: true, // optional
+      autoplay: true, // optional
+    });
+
+    animation.setSpeed(1);
+
+    var ua = navigator.userAgent,
+      M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+
+    if (/trident/i.test(M[1])) {
+      var ie = document.getElementById('ie');
+      var app = document.getElementById('app');
+      if (ie) ie.style.display = 'block';
+      if (app) app.style.display = 'none';
+    } else {
+      var interval = setInterval(function () {
+        if (document.readyState === 'complete') {
+          setTimeout(function () {
+            document.getElementById('app').style.display = 'block';
+          }, 100);
+          clearInterval(interval);
+        }
+      }, 100);
+    }
+  </script>
+  <noscript id="deferred-styles">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+  </noscript>
+  <script>
+    var loadDeferredStyles = function () {
+      var addStylesNode = document.getElementById('deferred-styles');
+      var replacement = document.createElement('div');
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement);
+      addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf =
+      window.requestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.msRequestAnimationFrame;
+    if (raf)
+      raf(function () {
+        window.setTimeout(loadDeferredStyles, 0);
+      });
+    else window.addEventListener('load', loadDeferredStyles);
+  </script>
+  <!-- your react app will render here -->
+  <div id="app"></div>
+  <div id="portals" />
+</body>
+
+</html>

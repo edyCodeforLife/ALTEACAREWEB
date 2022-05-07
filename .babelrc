@@ -1,0 +1,136 @@
+{
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "targets": {
+                    "node": 6
+                }
+            }
+        ],
+        "@babel/react",
+        [
+            "@babel/preset-react",
+            {
+                "runtime": "automatic"
+            }
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-optional-chaining",
+        "@babel/plugin-proposal-class-properties",
+        "transform-html-import-to-string",
+        "@babel/plugin-transform-react-jsx",
+        [
+            "babel-plugin-styled-components",
+            {
+                "ssr": false,
+                "displayName": true,
+                "preprocess": false
+            }
+        ],
+        [
+            "minify-dead-code-elimination",
+            {
+                "optimizeRawSize": true
+            }
+        ],
+        [
+            "babel-plugin-transform-imports",
+            {
+                "@material-ui/core": {
+                    "transform": "@material-ui/core/${member}",
+                    "preventFullImport": true
+                },
+                "@material/react-material-icon": {
+                    "transform": "@material/react-material-icon/${member}",
+                    "preventFullImport": true
+                },
+                "@material-ui/lab": {
+                    "transform": "@material-ui/lab/${member}",
+                    "preventFullImport": true
+                },
+                "@material/menu": {
+                    "transform": "@material/menu/${member}",
+                    "preventFullImport": true
+                },
+                "@material/menu-surface": {
+                    "transform": "@material/menu-surface/${member}",
+                    "preventFullImport": true
+                },
+                "@material/list": {
+                    "transform": "@material/list/${member}",
+                    "preventFullImport": true
+                },
+                "lodash": {
+                    "transform": "lodash/${member}",
+                    "preventFullImport": true
+                },
+                "lottie-web": {
+                    "transform": "lottie-web/${member}",
+                    "preventFullImport": true
+                },
+                "twilio-video": {
+                    "transform": "twilio-video/${member}",
+                    "preventFullImport": true
+                },
+                "twilio-chat": {
+                    "transform": "twilio-chat/${member}",
+                    "preventFullImport": true
+                },
+                "local-storage": {
+                    "transform": "local-storage/${member}",
+                    "preventFullImport": true
+                },
+                "react": {
+                    "transform": "react/${member}",
+                    "preventFullImport": true
+                },
+                "react-dom": {
+                    "transform": "react-dom/${member}",
+                    "preventFullImport": true
+                },
+                "react-router-dom": {
+                    "transform": "react-router-dom/${member}",
+                    "preventFullImport": true
+                },
+                "simple-crypto-js": {
+                    "transform": "simple-crypto-js/${member}",
+                    "preventFullImport": true
+                },
+                "date-fns": {
+                    "transform": "date-fns/${member}",
+                    "preventFullImport": true
+                },
+                "d3-timer": {
+                    "transform": "d3-timer/${member}",
+                    "preventFullImport": true
+                },
+                "react-slick": {
+                    "transform": "react-slick/${member}",
+                    "preventFullImport": true
+                },
+                "react-spring": {
+                    "transform": "react-spring/${member}",
+                    "preventFullImport": true
+                }
+            }
+        ],
+        [
+            "lodash",
+            {
+                "id": [
+                    "async",
+                    "lodash-bound"
+                ]
+            }
+        ]
+    ],
+    "env": {
+        "test": {
+            "plugins": [
+                "transform-dynamic-import"
+            ]
+        }
+    }
+}
